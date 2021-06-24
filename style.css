@@ -45,9 +45,10 @@ html body input {
 html body textarea:focus, html body input:focus {
   outline: none;
 }
-html body p {
+html body strong {
   font-size: x-large;
   margin-bottom: 8px;
+  margin-top: 8px;
 }
 html body small {
   margin-top: 10px;

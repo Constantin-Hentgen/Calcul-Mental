@@ -1,12 +1,12 @@
-<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <title>Computing with Safety</title>
-    </head>
+    <?php
+    include "head.php";
+    ?>
     <body>
     <p><strong>Enter the password</strong></p>
-        <?php include "formulaire.php" ?>
+        <?php
+            include "form.php";
+            include "verify.php";
+        ?>
     </body>
 </html>
