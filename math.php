@@ -16,7 +16,7 @@
     </head>
         <form action="math_back.php" method="post">
             <p>
-            <input type="variable" name="variable" autofocus/>
+            <input type="variable" name="variable" autofocus autocomplete="off"/>
             </p>
         </form>
         

@@ -5,10 +5,11 @@
     </head>
 
 <?php
-    if (isset($_POST['variable'])) // Si le variable existe
+    if (isset($_POST['variable']) AND ctype_digit($_POST["variable"])) // Si le variable existe
     {
         echo $_POST["variable"]*$_POST["variable"];
-        echo "<a href='index.php'>Let's compute more squares !</a>";
+        //echo random_int(0,100);
+        echo "<a href='math.php'>Let's compute more squares !</a>";
     }
 
     else
