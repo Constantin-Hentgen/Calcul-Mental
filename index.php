@@ -6,6 +6,7 @@
         <title>Secured web page</title>
     </head>
     <body>
+    <p>Enter the password</p>
         <?php include "formulaire.php" ?>
     </body>
 </html>

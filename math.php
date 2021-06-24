@@ -7,28 +7,19 @@
     <body>
     
         <?php
-        include "formulaire.php";
-    if (isset($_POST['nombre']) AND $_POST["nombre"] != 0) // Si le nombre existe
-    {
-        $nombre = $_POST["nombre"];
-        echo $nombre*$nombre;
-    // On affiche les codes
-    
-    ?>
-    <form action="math.php" method="post">
-        <p>
-        <input type="nombre" name="nombre" />
-        <input type="submit" value="Valider" />
-        </p>
-    </form>;
-        <?php
-    }
-    else // Sinon, on affiche un message d'erreur
-    {
-        echo '<p>Mot de passe incorrect</p>';
-    }
-    ?>
-    
+        echo "<p>Enter a number :</p>";
+        ?>   
+        <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <title>Secured web page</title>
+    </head>
+        <form action="math_back.php" method="post">
+            <p>
+            <input type="variable" name="variable" autofocus/>
+            <input type="submit" value="Valider" />
+            </p>
+        </form>
         
     </body>
 </html>

@@ -7,10 +7,10 @@
     <body>
     
         <?php
-        include "formulaire.php";
-    if (isset($_POST['mot_de_passe']) AND $_POST['mot_de_passe'] ==  "kangourou") // Si le mot de passe est bon
-    {        
-        include "math.php";
+        echo "<p>Enter the password</p>";
+    if (isset($_POST['variable']) AND $_POST['variable'] == "test") // Si le mot de passe est bon
+    {
+        header("Location:math.php");
     ?>
         <?php
     }
@@ -18,8 +18,7 @@
     {
         echo '<p>Mot de passe incorrect</p>';
     }
-    ?>
-    
-        
+    ?> 
+   
     </body>
 </html>

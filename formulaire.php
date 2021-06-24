@@ -6,10 +6,9 @@
         <title>Secured web page</title>
     </head>
     <body>
-        <p>Enter the password</p>
         <form action="secret.php" method="post">
             <p>
-            <input type="password" name="mot_de_passe" />
+            <input type="variable" name="variable" autofocus/>
             <input type="submit" value="Valider" />
             </p>
         </form>
