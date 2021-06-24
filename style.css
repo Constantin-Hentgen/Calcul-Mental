@@ -1,0 +1,27 @@
+html {
+  margin: 0;
+  background-color: #292929;
+  display: grid;
+  place-items: center;
+  font-family: 'Noto Regular', sans-serif;
+  width: 100%;
+  height: 100%;
+}
+html body {
+  display: grid;
+  place-items: center;
+  color: whitesmoke;
+  font-size: large;
+  background-color: #202020;
+  width: 20%;
+  padding: 30px;
+  border: transparent 0px black;
+  border-radius: 25px;
+}
+html body form {
+  font-size: large;
+  display: grid;
+  place-items: center;
+}
+
+/*# sourceMappingURL=style.css.map */

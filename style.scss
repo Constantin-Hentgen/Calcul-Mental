@@ -1,0 +1,27 @@
+$base-color:#292929;
+$secondary-color:#202020;
+
+html {
+  margin: 0;
+  background-color: $base-color;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height:100%;
+  body{
+    display: grid;
+    place-items: center;
+    color: whitesmoke;
+    font-size: large;
+    background-color: $secondary-color;
+    width: 20%;
+    padding: 30px;
+    border: transparent 0px black;
+    border-radius: 25px;
+    form{
+      font-size: large;
+      display: grid;
+      place-items: center;
+    }
+  }
+}
