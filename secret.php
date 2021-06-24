@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>Secured web page</title>
+        <title>Computing with Safety</title>
     </head>
     <body>
     
@@ -16,7 +16,7 @@
     }
     else // Sinon, on affiche un message d'erreur
     {
-        echo '<p>Mot de passe incorrect</p>';
+        echo '<p>Incorrect password</p>';
     }
     ?> 
    

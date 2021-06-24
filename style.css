@@ -22,15 +22,35 @@ html body form {
   font-size: large;
   display: grid;
   place-items: center;
+  margin: 0;
+  padding: 0;
 }
 html body a {
   color: whitesmoke;
   padding: 15px;
   border: transparent 0px solid;
   border-radius: 25px;
-  margin-top: 15px;
+  margin-top: 10px;
   background-color: #292929;
   text-decoration: none;
+}
+html body input {
+  background-color: whitesmoke;
+  border: transparent 0px solid;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: large;
+  text-align: center;
+}
+html body textarea:focus, html body input:focus {
+  outline: none;
+}
+html body p {
+  font-size: x-large;
+  margin-bottom: 8px;
+}
+html body small {
+  margin-top: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */

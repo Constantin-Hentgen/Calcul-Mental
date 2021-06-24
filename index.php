@@ -3,10 +3,10 @@
     <head>
         <meta charset="utf-8" />
         <link rel="stylesheet" type="text/css" href="style.css">
-        <title>Secured web page</title>
+        <title>Computing with Safety</title>
     </head>
     <body>
-    <p>Enter the password</p>
+    <p><strong>Enter the password</strong></p>
         <?php include "formulaire.php" ?>
     </body>
 </html>

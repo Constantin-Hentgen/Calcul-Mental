@@ -1,7 +1,7 @@
 <head>
         <meta charset="utf-8" />
         <link rel="stylesheet" type="text/css" href="style.css">
-        <title>Secured web page</title>
+        <title>Computing with Safety</title>
     </head>
 
 <?php
@@ -14,8 +14,8 @@
 
     else
     {
-        echo "Your input is wrong, try again…";
         include "math.php";
+        echo "<small>Your input is wrong, try again…</small>";
     }
 
 ?>

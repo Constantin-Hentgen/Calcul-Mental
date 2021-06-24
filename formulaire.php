@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <link rel="stylesheet" type="text/css" href="style.css">
-        <title>Secured web page</title>
+        <title>Computing with Safety</title>
     </head>
     <body>
         <form action="secret.php" method="post">
