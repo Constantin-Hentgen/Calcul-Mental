@@ -3,8 +3,10 @@
     {
         header("Location:math.php");
     }
+    elseif (isset($_POST["variable"]) == false)
+    {}
     else
     {
-        echo '<p>Incorrect password</p>';
+        echo "<p>Incorrect password </p>";
     }
 ?>
