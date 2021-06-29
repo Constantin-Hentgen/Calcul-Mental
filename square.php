@@ -15,24 +15,16 @@
             if (ctype_digit($char) === false){
                     $array = 0;
                     header("Refresh:0");
+                    break;
+                        //on gère les cas de caratères non chiffre
                         //en prod il faudra enlever l'affichage des erreurs
                 }
-            else {}
         }
 
-        $suggestion = (int)$_POST["variable"];
-        echo $suggestion;
-        if ($suggestion === $nombre_B + $nombre_A){
-            echo "you're the champion !";
-        }
-        else{
-            echo '<script type="text/javascript">','button_react();','</script>';
-        }
+        echo '<script type="text/javascript">','addition_verification(',$nombre_A,',',$nombre_B,',',$_POST["variable"],');','</script>';
         //echo "<strong>",$_POST["variable"],"=",(int)$_POST["variable"],"</strong>";
         //echo random_int(0,100);//génération d'un nombre aléatoire compris entre 0 et 100
     }
-    elseif (isset($_POST["variable"]) == false)
-    {}
     else
     {
         header("math.php");
