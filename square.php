@@ -6,16 +6,17 @@
     if (isset($_POST['variable']))
     {
         $array = str_split($_POST["variable"]);
-        foreach($array as $char){
+        foreach ($array as $char){
             if (ctype_digit($char) === false){
-                if ($char === "+" || $char === "-"){
+                if ($char === "+" || $char === "-" || $char === "*"){
                 }
                 else {
                     $array = 0;
                     header("Refresh:0");
                         //en prod il faudra enlever l'affichage des erreurs
                 }
-            }    
+            }
+            else {}    
         }
         $string = implode(",",$array);
         echo $string;
