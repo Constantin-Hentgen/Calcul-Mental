@@ -3,7 +3,7 @@
     include "head.php";
     ?>
     <body>
-        <strong>Enter an integer :</strong>
+        <strong>Enter a compute :</strong>
         <?php
         include "square.php";
         ?>
