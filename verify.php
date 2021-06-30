@@ -5,7 +5,7 @@
         <script>
             document.getElementById('form').style.display = 'none';
             document.getElementById('message').innerHTML = 'Bienvenue';
-            document.body.style.background = 'aquamarine';
+            document.body.style.background = 'green';
             document.body.style.color = 'black';
             document.getElementById('message').style.color = '#282828';
         </script>";

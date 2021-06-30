@@ -5,7 +5,7 @@ html {
   margin: 0;
   background-color: $base-color;
   display: grid;
-  caret-color: aquamarine;
+  caret-color: rgb(4, 255, 4);
   place-items: center;
   height:100%;
   font-family: "Arial";
@@ -38,13 +38,20 @@ html {
     }
     input{
       background-color: $secondary-color;
-      color: aquamarine;
+      color: green;
       border: transparent 0px solid;
       border-radius: 5px;
       padding: 10px;
       font-size: 30px;
+      font-weight: bold;
       text-align: center;
     }
+
+    #valide{
+      display: none;
+      width: 50px;
+    }
+
     textarea:focus, input:focus{
       outline: none;
     }
@@ -53,8 +60,6 @@ html {
       color: grey;
       margin-bottom: 8px;
       margin-top: 8px;
-      animation-name: 'fondu';
-      animation-duration: 1s;
     }
     small{
       margin-top: 10px;
@@ -62,21 +67,13 @@ html {
   }
 }
 
-#message{
-  font-size: xx-large;
-  font-style: italic;
+#cross{
+  width: 100px;
 }
 
-button{
-  margin-bottom:12px;
-  background-color: blue;
-  color: whitesmoke;
-  padding: 5px;
-  font-size: 30px;
-  border: 0px transparent solid;
-  border-radius: 10px;
-  width: 50px;
-  height: 50px;
+#message{
+  font-size: 40px;
+  font-weight: bold;
 }
 
 @keyframes fondu {
