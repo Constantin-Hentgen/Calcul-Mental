@@ -48,6 +48,8 @@ html body strong {
   font-size: x-large;
   margin-bottom: 8px;
   margin-top: 8px;
+  animation-name: "fondu";
+  animation-duration: 1s;
 }
 html body small {
   margin-top: 10px;
@@ -63,6 +65,17 @@ button {
   border-radius: 10px;
   width: 50px;
   height: 50px;
+}
+
+@keyframes fondu {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

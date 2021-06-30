@@ -1,11 +1,19 @@
+<?php
+    session_start();
+    $_SESSION['nombre_A'] = 4;
+    $_SESSION['nombre_B'] = 5;
+    $_SESSION['operation'] = '+';
+?>
+<!DOCTYPE html>
 <html>
-    <?php
-    include "head.php";
-    ?>
     <body>
-    <p><strong>Enter the password</strong></p>
+        <p><strong>Enter the password</strong></p>
+    
+        <form action="<?=$_SERVER['PHP_SELF']?>" method="post">
+            <input type="password" name="variable" autofocus autocomplete="off"/>
+        </form>
         <?php
-            include "form.php";
+            include 'head.php';
             include "verify.php";
         ?>
     </body>
