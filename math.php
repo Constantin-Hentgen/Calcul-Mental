@@ -11,7 +11,7 @@
             //$_SESSION['nombre_A'] = random_int(1,10);
             //$_SESSION['nombre_B'] = random_int(1,10);
             //echo "<strong>",$_SESSION['nombre_A'],"+",$_SESSION['nombre_B'],"</strong>";
-            echo "<strong id='strong'>",$_SESSION['counter']," ; ",$_SESSION['nombre_A'],$_SESSION['operation'],$_SESSION['nombre_B'],"</strong>";
+            echo "<strong id='strong'>",$_SESSION['nombre_A'],' ',$_SESSION['operation'],' ',$_SESSION['nombre_B'],"</strong>";
         ?>
         <form id='form' action="<?=$_SERVER['PHP_SELF']?>" method="post">
             <input type="variable" name="variable" autofocus autocomplete="off"/>
@@ -25,6 +25,7 @@
                     <script>
                     document.getElementById('form').style.display = 'none';
                     document.getElementById('strong').innerHTML = 'Terminé !';
+                    document.getElementById('strong').style.color = '#282828';
                     document.body.style.background = 'green';
                     document.form.style.display = 'none';
                     </script>"; 
@@ -35,6 +36,7 @@
                     <script>
                     document.getElementById('form').style.display = 'none';
                     document.getElementById('strong').innerHTML = 'Bien joué';
+                    document.getElementById('strong').style.color = '#282828';
                     document.body.style.background = 'green';
                     document.form.style.display = 'none';
                     </script>";

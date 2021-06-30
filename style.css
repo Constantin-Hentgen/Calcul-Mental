@@ -2,6 +2,7 @@ html {
   margin: 0;
   background-color: #282828;
   display: grid;
+  caret-color: aquamarine;
   place-items: center;
   height: 100%;
   font-family: "Arial";
@@ -16,10 +17,12 @@ html body {
   color: whitesmoke;
   font-size: large;
   background-color: #202020;
-  width: 20%;
+  width: 30%;
   padding: 30px;
   border: transparent 0px black;
   border-radius: 25px;
+  animation-name: "fondu";
+  animation-duration: 1s;
 }
 html body form {
   font-size: large;
@@ -28,28 +31,25 @@ html body form {
   margin: 0;
   padding: 0;
 }
-html body a {
-  color: whitesmoke;
-  padding: 15px;
-  border: transparent 0px solid;
-  border-radius: 25px;
-  margin-top: 10px;
-  background-color: #282828;
-  text-decoration: none;
+html body p {
+  font-size: x-large;
+  color: grey;
 }
 html body input {
-  background-color: whitesmoke;
+  background-color: #202020;
+  color: aquamarine;
   border: transparent 0px solid;
   border-radius: 5px;
   padding: 10px;
-  font-size: large;
+  font-size: 30px;
   text-align: center;
 }
 html body textarea:focus, html body input:focus {
   outline: none;
 }
 html body strong {
-  font-size: x-large;
+  font-size: 50px;
+  color: grey;
   margin-bottom: 8px;
   margin-top: 8px;
   animation-name: "fondu";
@@ -57,6 +57,11 @@ html body strong {
 }
 html body small {
   margin-top: 10px;
+}
+
+#message {
+  font-size: xx-large;
+  font-style: italic;
 }
 
 button {

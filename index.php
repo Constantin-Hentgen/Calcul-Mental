@@ -7,14 +7,16 @@
 ?>
 <!DOCTYPE html>
 <html>
+<?php
+    include 'head.php';
+?>
     <body>
-        <p><strong>Entrez le mot de passe</strong></p>
+        <p id='message'>Entrez le mot de passe :</p>
     
-        <form action="<?=$_SERVER['PHP_SELF']?>" method="post">
+        <form id = 'form' action="<?=$_SERVER['PHP_SELF']?>" method="post">
             <input type="password" name="variable" autofocus autocomplete="off"/>
         </form>
         <?php
-            include 'head.php';
             include "verify.php";
         ?>
     </body>
