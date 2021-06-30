@@ -7,6 +7,6 @@
     {}
     else
     {
-        echo "<p>Incorrect password </p>";
+        echo "<p>Mot de passe incorrect</p>";
     }
 ?>

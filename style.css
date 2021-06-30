@@ -1,10 +1,14 @@
 html {
   margin: 0;
-  background-color: #292929;
+  background-color: #282828;
   display: grid;
   place-items: center;
   height: 100%;
   font-family: "Arial";
+  background-image: url("");
+  background-repeat: no-repeat;
+  background-size: 30%;
+  background-position: center 20%;
 }
 html body {
   display: grid;
@@ -30,7 +34,7 @@ html body a {
   border: transparent 0px solid;
   border-radius: 25px;
   margin-top: 10px;
-  background-color: #292929;
+  background-color: #282828;
   text-decoration: none;
 }
 html body input {

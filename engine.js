@@ -1,11 +1,5 @@
 //document.getElementById("javascript")
 
-function ruselt()
-{
-    let randomy = Math.floor(Math.random() * 10)+'test';
-    document.getElementById('javascript').innerHTML = randomy;
-}
-
 //function addition_verification()
 //{
 //    let randomy = 6;

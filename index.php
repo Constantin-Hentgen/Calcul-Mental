@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html>
     <body>
-        <p><strong>Enter the password</strong></p>
+        <p><strong>Entrez le mot de passe</strong></p>
     
         <form action="<?=$_SERVER['PHP_SELF']?>" method="post">
             <input type="password" name="variable" autofocus autocomplete="off"/>

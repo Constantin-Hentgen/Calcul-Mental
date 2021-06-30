@@ -1,4 +1,4 @@
-$base-color:#292929;
+$base-color:#282828;
 $secondary-color:#202020;
 
 html {
@@ -8,6 +8,10 @@ html {
   place-items: center;
   height:100%;
   font-family: "Arial";
+  background-image: url(''); //fireworks.gif
+  background-repeat: no-repeat;
+  background-size: 30%;
+  background-position: center 20%;
   body{
     display: grid;
     place-items: center;
@@ -21,7 +25,7 @@ html {
     form{
       font-size: large;
       display: grid;
-      place-items: center;
+      place-items: center;;
       margin: 0;
       padding: 0;
     }
