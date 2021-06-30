@@ -3,6 +3,7 @@
     $_SESSION['nombre_A'] = 4;
     $_SESSION['nombre_B'] = 5;
     $_SESSION['operation'] = '+';
+    $_SESSION['counter'] = 0;
 ?>
 <!DOCTYPE html>
 <html>

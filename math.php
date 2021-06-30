@@ -21,13 +21,14 @@
             if (isset($_POST['variable'])){
                 if ((int)$_POST['variable']===$result)
                 {
+                    $_SESSION['counter'] += 1;
                     echo "
                     <script>
                         document.getElementById('form').style.display = 'none';
                         document.getElementById('strong').innerHTML = 'Well done';
                         document.body.style.background = 'green';
                         document.form.style.display = 'none';
-                    </script>";                    
+                    </script>";
                     $_SESSION['nombre_A'] = random_int(1,10);
                     $_SESSION['nombre_B'] = random_int(1,10);
                     header("Refresh:2");
