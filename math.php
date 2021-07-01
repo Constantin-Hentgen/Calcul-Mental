@@ -24,7 +24,7 @@
             elseif($_SESSION['operation'] === '-'){
                 $result = $_SESSION['nombre_A']-$_SESSION['nombre_B'];
             }
-            elseif($_SESSION['operation'] === '*'){
+            elseif($_SESSION['operation'] === '×'){
                 $result = $_SESSION['nombre_A']*$_SESSION['nombre_B'];
             }
             else{
@@ -62,9 +62,15 @@
                     ";
                     //echo "<strong id='strong'>",$_SESSION['nombre_A'],' ',$_SESSION['operation'],' ',$_SESSION['nombre_B'],"</strong>"," = ",$result;
                     $_SESSION['counter'] += 1;
-                    $_SESSION['nombre_A'] = random_int(1,10);
-                    $_SESSION['nombre_B'] = random_int(1,10);
-                    $dico = ['+','-','*'];
+                    $temp_A = random_int(1,10);
+                    $temp_B = random_int(1,10);
+                    while ($temp_A < $temp_B){
+                        $temp_A = random_int(1,10);
+                        $temp_B = random_int(1,10);
+                    }
+                    $_SESSION['nombre_A'] = $temp_A;
+                    $_SESSION['nombre_B'] = $temp_B;
+                    $dico = ['+','-','×'];
                     $dico_picker = random_int(0,2);
                     $_SESSION['operation'] = $dico[$dico_picker];
                     header("Refresh:1");

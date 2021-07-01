@@ -2,7 +2,7 @@
     session_start();
     $_SESSION['nombre_A'] = random_int(1,10);
     $_SESSION['nombre_B'] = random_int(1,10);
-    $dico = ['+','-','*'];
+    $dico = ['+','-','×'];
     $dico_picker = random_int(0,2);
     $_SESSION['operation'] = $dico[$dico_picker];
     $_SESSION['counter'] = 0;
