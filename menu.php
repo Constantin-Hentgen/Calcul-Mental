@@ -7,7 +7,7 @@
 ?>
 
     <body>
-        <p id='message'>Choississez un mode de jeu</p>
+        <p id='message'>Choisissez un mode de jeu</p>
     <form id='menu'>
         <input type="button" onClick='window.location.replace("math.php");'id="Entrainement"value='💪'>
         <input type="button" id="Marathon" value="🦵">

@@ -69,6 +69,11 @@ html body small {
   height: 100px;
 }
 
+#congrats {
+  color: red;
+  text-align: center;
+}
+
 #Marathon {
   background-color: blue;
   border-radius: 0;

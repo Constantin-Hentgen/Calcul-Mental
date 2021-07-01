@@ -8,10 +8,7 @@
         ?>
     <body>
         <?php
-            //$_SESSION['nombre_A'] = random_int(1,10);
-            //$_SESSION['nombre_B'] = random_int(1,10);
-            //echo "<strong>",$_SESSION['nombre_A'],"+",$_SESSION['nombre_B'],"</strong>";
-            echo "<strong id='strong'>",$_SESSION['nombre_A'],' ',$_SESSION['operation'],' ',$_SESSION['nombre_B'],"</strong>";
+           echo "<strong id='strong'>",$_SESSION['nombre_A'],' ',$_SESSION['operation'],' ',$_SESSION['nombre_B'],"</strong>";
             ?>
         <form id='form' action="<?=$_SERVER['PHP_SELF']?>" method="post">
             <input type="variable" name="variable" autofocus autocomplete="off"/>
@@ -34,16 +31,14 @@
             if (isset($_POST['variable'])){
                 if ($_SESSION['counter'] === 2)
                 {
-
-                    echo "<img id='fireworks' src='fireworks.gif'";
-                    //echo "<script>document.getElementById('form').style.display = 'none';</script>";
+                    echo "<img id='fireworks' src='fireworks.gif'/>";
                     echo "
-                    <script>       
-                    document.getElementById('strong').innerHTML = 'Terminé !';
+                    <script>
+                    document.getElementById('strong').style.display = 'none';
+                    document.getElementById('form').style.display = 'none';
                     document.getElementById('strong').style.color = '#282828';
-                    document.body.style.background = 'yellowgreen';
-                    </script>"; 
-
+                    </script>";
+                    echo "<strong id='congrats'>Félicitations,<br>Tu as réussi ",$_SESSION['counter']+1,' calculs !',"</strong>";
                     header('Refresh:50;url=index.php');
                 }
                 elseif ((int)$_POST['variable']===$result)
