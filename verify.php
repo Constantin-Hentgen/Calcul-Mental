@@ -20,6 +20,9 @@
     }
     elseif (isset($_POST["variable"]) == false)
     {}
+    elseif (isset($_SESSION['tentatives'])===false){
+        $_SESSION['tentatives'] = 0;
+    }
     else
     {
         $_SESSION['tentatives'] += 1;
@@ -27,7 +30,7 @@
             $_SESSION['tentatives'] = 0;
             echo "<script>document.body.style.display = 'none';</script>";
         }
-        if ($_SESSION['tentatives'] ==1){
+        elseif ($_SESSION['tentatives'] ==1){
             echo "<p>",$_SESSION['tentatives']," mot de passe incorrect</p>";
         }
         else{

@@ -30,7 +30,8 @@
             }
 
             if (isset($_POST['variable'])){
-                if ($_SESSION['counter'] === 9)
+                if ($_SESSION['counter'] === 2 && (int)$_POST['variable']===$result) 
+                // prendre garde à ce que la condition de réussite soit remplie
                 {
                     echo "<img id='fireworks' src='fireworks.gif'/>";
                     echo "
