@@ -22,6 +22,16 @@
     {}
     else
     {
-        echo "<small>Mot de passe incorrect</small>";
+        $_SESSION['tentatives'] += 1;
+        if ($_SESSION['tentatives']>4){
+            $_SESSION['tentatives'] = 0;
+            echo "<script>document.body.style.display = 'none';</script>";
+        }
+        if ($_SESSION['tentatives'] ==1){
+            echo "<p>",$_SESSION['tentatives']," mot de passe incorrect</p>";
+        }
+        else{
+            echo "<p>",$_SESSION['tentatives']," mots de passe incorrects</p>";
+        }
     }
 ?>

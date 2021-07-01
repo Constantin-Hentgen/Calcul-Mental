@@ -1,5 +1,6 @@
 <?php
     session_start();
+    $_SESSION['tentatives'] = 0;
 ?>
 <!DOCTYPE html>
 <html>
@@ -29,7 +30,7 @@
             }
 
             if (isset($_POST['variable'])){
-                if ($_SESSION['counter'] === 2)
+                if ($_SESSION['counter'] === 9)
                 {
                     echo "<img id='fireworks' src='fireworks.gif'/>";
                     echo "
@@ -39,7 +40,7 @@
                     document.getElementById('strong').style.color = '#282828';
                     </script>";
                     echo "<strong id='congrats'>Félicitations,<br>Tu as réussi ",$_SESSION['counter']+1,' calculs !',"</strong>";
-                    header('Refresh:50;url=index.php');
+                    header('Refresh:5;url=index.php');
                 }
                 elseif ((int)$_POST['variable']===$result)
                 {
@@ -78,12 +79,11 @@
                     document.getElementById('form').style.display = 'none';
                     document.getElementById('cross').style.display = 'flex';
                     document.getElementById('strong').style.display = 'none';
-                    document.getElementById('answer').style.color = '#282828';
-                    document.body.style.background = 'red';
+                    document.body.style.background = 'transparent';
                     document.form.style.display = 'none';
                     </script>
                     ";
-                    header("Refresh:2;url=math.php");
+                    header("Refresh:1;url=math.php");
                 }
             }
             //gestion générique en cas de problème

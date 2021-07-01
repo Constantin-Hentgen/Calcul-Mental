@@ -2,6 +2,14 @@
     session_start();
     $_SESSION['nombre_A'] = random_int(1,10);
     $_SESSION['nombre_B'] = random_int(1,10);
+    $temp_A = random_int(1,10);
+    $temp_B = random_int(1,10);
+    while ($temp_A < $temp_B){
+        $temp_A = random_int(1,10);
+        $temp_B = random_int(1,10);
+    }
+    $_SESSION['nombre_A'] = $temp_A;
+    $_SESSION['nombre_B'] = $temp_B;
     $dico = ['+','-','×'];
     $dico_picker = random_int(0,2);
     $_SESSION['operation'] = $dico[$dico_picker];
@@ -17,7 +25,7 @@
         <p id='message'>Entrez le mot de passe :</p>
     
         <form id = 'form' action="<?=$_SERVER['PHP_SELF']?>" method="post">
-            <input type="password" name="variable" autofocus autocomplete="off"/>
+            <input id='password' type="password" name="variable" autofocus autocomplete="off"/>
         </form>
         <?php
             include "verify.php";
