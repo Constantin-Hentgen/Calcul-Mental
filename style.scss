@@ -5,8 +5,8 @@ html {
   margin: 0;
   background-color: $base-color;
   display: grid;
-  caret-color: rgb(4, 255, 4);
   place-items: center;
+  caret-color: whitesmoke;
   height:100%;
   font-family: "Arial";
   background-image: url(''); //fireworks.gif
@@ -19,7 +19,7 @@ html {
     color: whitesmoke;
     font-size: large;
     background-color: $secondary-color;
-    width: 30%;
+    width: 45%;
     padding: 30px;
     border: transparent 0px black;
     border-radius: 25px;
@@ -28,7 +28,7 @@ html {
     form{
       font-size: large;
       display: grid;
-      place-items: center;;
+      place-items: center;
       margin: 0;
       padding: 0;
     }
@@ -38,11 +38,11 @@ html {
     }
     input{
       background-color: $secondary-color;
-      color: green;
+      color: whitesmoke;
       border: transparent 0px solid;
       border-radius: 5px;
       padding: 10px;
-      font-size: 30px;
+      font-size: 50px;
       font-weight: bold;
       text-align: center;
     }
@@ -67,8 +67,19 @@ html {
   }
 }
 
-#cross{
-  width: 100px;
+#menu{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: yellowgreen;
+  border: transparent 0 solid;
+  border-radius: 20px;
+  padding: 20px;
+  width: 50%;
+
+  #menu input{
+    font-size: 20px;
+  }
 }
 
 #message{

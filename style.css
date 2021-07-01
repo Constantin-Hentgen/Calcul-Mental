@@ -2,8 +2,8 @@ html {
   margin: 0;
   background-color: #282828;
   display: grid;
-  caret-color: #04ff04;
   place-items: center;
+  caret-color: whitesmoke;
   height: 100%;
   font-family: "Arial";
   background-image: url("");
@@ -17,7 +17,7 @@ html body {
   color: whitesmoke;
   font-size: large;
   background-color: #202020;
-  width: 30%;
+  width: 45%;
   padding: 30px;
   border: transparent 0px black;
   border-radius: 25px;
@@ -37,11 +37,11 @@ html body p {
 }
 html body input {
   background-color: #202020;
-  color: green;
+  color: whitesmoke;
   border: transparent 0px solid;
   border-radius: 5px;
   padding: 10px;
-  font-size: 30px;
+  font-size: 50px;
   font-weight: bold;
   text-align: center;
 }
@@ -62,8 +62,18 @@ html body small {
   margin-top: 10px;
 }
 
-#cross {
-  width: 100px;
+#menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: yellowgreen;
+  border: transparent 0 solid;
+  border-radius: 20px;
+  padding: 20px;
+  width: 50%;
+}
+#menu #menu input {
+  font-size: 20px;
 }
 
 #message {

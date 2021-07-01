@@ -4,6 +4,7 @@
     $_SESSION['nombre_B'] = 5;
     $_SESSION['operation'] = '+';
     $_SESSION['counter'] = 0;
+    $_SESSION['jeu'] = '';
 ?>
 <!DOCTYPE html>
 <html>
