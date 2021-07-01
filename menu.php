@@ -6,12 +6,19 @@
     //faire un système de traces historique pour comptabiliser les points
 ?>
 
-    <body>
-        <p id='message'>Choisissez un mode de jeu</p>
+    <body id="invisible">
     <form id='menu'>
-        <input type="button" onClick='window.location.replace("math.php");'id="Entrainement"value='💪'>
-        <input type="button" id="Marathon" value="🦵">
-        <input type="button" id="Top_Chrono" value="⏱">
+        <div id="up">
+            <input type="button" onClick='window.location.replace("marathon.php");' id="Marathon" value="🦵">
+            <input type="button" onClick='window.location.replace("qcm.php");' id="qcm" value="QCM">
+            <input type="button" onClick='window.location.replace("entrainement.php");' id="Entrainement"value='💪'>
+        </div>
+
+        <div id="down">
+            <input type="button" onClick='window.location.replace("trou.php");' id="trou" value="🕳">
+            <input type="button" onClick='window.location.replace("exam.php");' id="exam" value="💯">
+            <input type="button" onClick='window.location.replace("top_chrono.php");' id="Top_Chrono" value="⏱">
+        </div>
     </form>
     </body>
 </html>

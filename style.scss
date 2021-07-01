@@ -51,7 +51,6 @@ html {
       width: 50px;
     }
 
-
     textarea:focus, input:focus{
       outline: none;
     }
@@ -68,7 +67,7 @@ html {
 }
 #Entrainement{
   background-color: red;
-  border-radius: 20px 0 0 20px;
+  border-radius: 0 20px 0 0;
   width: 100px;
   height: 100px;
 }
@@ -80,15 +79,25 @@ html {
 #congrats{
   color: orange;
   text-align: center;
-  font-size: xx-large;
+  font-size: 50px;
   animation-name: 'zoom_in';
   animation-duration: 2s;
   animation-iteration-count: infinite;
 }
 
+#up{
+  display: flex;
+  justify-items: center;
+}
+
+#down{
+  display: flex;
+  justify-items: center;
+}
+
 #Marathon{
   background-color: blue;
-  border-radius: 0;
+  border-radius: 20px 0 0 0;
   width: 100px;
   height: 100px;
 }
@@ -98,16 +107,51 @@ html {
   animation-iteration-count: 1;
 }
 
+#down{
+  margin: 0;
+  padding: 0;
+}
+
+#trou{
+  background-color: purple;
+  border-radius: 0 0 0 20px;
+  width: 100px;
+  height: 100px;
+  margin: 0;
+  padding: 0;
+}
+
+#exam{
+  background-color: orange;
+  color: black;
+  border-radius: 0;
+  width: 100px;
+  height: 100px;
+}
+
+#invisible{
+  background-color: transparent;
+}
+
+#qcm{
+  background-color: yellow;
+  color: black;
+  font-size: 30px;
+  border-radius: 0;
+  width: 100px;
+  height: 100px;
+}
+
 #Top_Chrono{
   background-color: green;
-  border-radius: 0 20px 20px 0;
+  border-radius: 0 0 20px 0;
   width: 100px;
   height: 100px;
 }
 
 #menu{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   border: transparent 0 solid;
   border-radius: 20px;
