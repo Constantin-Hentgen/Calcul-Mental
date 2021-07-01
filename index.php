@@ -1,8 +1,10 @@
 <?php
     session_start();
-    $_SESSION['nombre_A'] = 4;
-    $_SESSION['nombre_B'] = 5;
-    $_SESSION['operation'] = '+';
+    $_SESSION['nombre_A'] = random_int(1,10);
+    $_SESSION['nombre_B'] = random_int(1,10);
+    $dico = ['+','-','*'];
+    $dico_picker = random_int(0,2);
+    $_SESSION['operation'] = $dico[$dico_picker];
     $_SESSION['counter'] = 0;
     $_SESSION['jeu'] = '';
 ?>

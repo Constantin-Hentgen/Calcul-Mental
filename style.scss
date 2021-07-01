@@ -52,6 +52,7 @@ html {
       width: 50px;
     }
 
+
     textarea:focus, input:focus{
       outline: none;
     }
@@ -66,15 +67,34 @@ html {
     }
   }
 }
+#Entrainement{
+  background-color: red;
+  border-radius: 20px 0 0 20px;
+  width: 100px;
+  height: 100px;
+}
+
+#Marathon{
+  background-color: blue;
+  border-radius: 0;
+  width: 100px;
+  height: 100px;
+}
+
+#Top_Chrono{
+  background-color: green;
+  border-radius: 0 20px 20px 0;
+  width: 100px;
+  height: 100px;
+}
 
 #menu{
   display: flex;
   flex-direction: row;
   justify-content: center;
-  background-color: yellowgreen;
   border: transparent 0 solid;
   border-radius: 20px;
-  padding: 20px;
+  padding: 0;
   width: 50%;
 
   #menu input{

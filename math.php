@@ -16,22 +16,35 @@
         <form id='form' action="<?=$_SERVER['PHP_SELF']?>" method="post">
             <input type="variable" name="variable" autofocus autocomplete="off"/>
         </form>
-           
-        <?php            
-            $result = $_SESSION['nombre_B']+$_SESSION['nombre_A'];
+
+        <?php
+            if ($_SESSION['operation'] === '+'){
+                $result = $_SESSION['nombre_A']+$_SESSION['nombre_B'];
+            }
+            elseif($_SESSION['operation'] === '-'){
+                $result = $_SESSION['nombre_A']-$_SESSION['nombre_B'];
+            }
+            elseif($_SESSION['operation'] === '*'){
+                $result = $_SESSION['nombre_A']*$_SESSION['nombre_B'];
+            }
+            else{
+                echo "<strong>erreur pour le calcul du résultat</strong>";
+            }
+
             if (isset($_POST['variable'])){
-                if ($_SESSION['counter'] === 10)
-                {                   
+                if ($_SESSION['counter'] === 2)
+                {
+
+                    echo "<img id='fireworks' src='fireworks.gif'";
+                    //echo "<script>document.getElementById('form').style.display = 'none';</script>";
                     echo "
-                    <script>
-                    document.getElementById('form').style.display = 'none';                 
+                    <script>       
                     document.getElementById('strong').innerHTML = 'Terminé !';
                     document.getElementById('strong').style.color = '#282828';
                     document.body.style.background = 'yellowgreen';
-                    document.form.style.display = 'none';
                     </script>"; 
 
-                    header('Refresh:2;url=index.php');
+                    header('Refresh:50;url=index.php');
                 }
                 elseif ((int)$_POST['variable']===$result)
                 {
@@ -51,12 +64,15 @@
                     $_SESSION['counter'] += 1;
                     $_SESSION['nombre_A'] = random_int(1,10);
                     $_SESSION['nombre_B'] = random_int(1,10);
+                    $dico = ['+','-','*'];
+                    $dico_picker = random_int(0,2);
+                    $_SESSION['operation'] = $dico[$dico_picker];
                     header("Refresh:1");
                 }
                 
                 else
                 {
-                    echo "<img id='cross' src='cross.png'/>
+                    echo "<strong id='cross'> ❌</strong>
                     <script>
                     document.getElementById('form').style.display = 'none';
                     document.getElementById('cross').style.display = 'flex';
