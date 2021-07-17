@@ -1,21 +1,23 @@
 <?php
     session_start();
 ?>
+
 <!DOCTYPE html>
 <html>
     <?php
         include 'head.php';
-        ?>
+    ?>
+
     <body>
         <?php
            echo "<strong id='strong'>",$_SESSION['nombre_A'],' ',$_SESSION['operation'],' ',$_SESSION['nombre_B'],"</strong>";
-            ?>
+           $start = hrtime(true);           
+        ?>
         <form id='form' action="<?=$_SERVER['PHP_SELF']?>" method="post">
             <input type="variable" name="variable" autofocus autocomplete="off"/>
         </form>
 
         <?php
-            $_SESSION['input'] = $_POST['variable'];
             if ($_SESSION['operation'] === '+'){
                 $result = $_SESSION['nombre_A']+$_SESSION['nombre_B'];
             }
@@ -41,6 +43,7 @@
                     document.getElementById('strong').style.color = '#282828';
                     </script>";
                     echo "<strong id='congrats'>Félicitations","</strong>";
+                    $_SESSION['counter'] = 0;
                     header('Refresh:8;url=menu.php');
                 }
                 elseif ((int)$_POST['variable']===$result)
@@ -57,6 +60,9 @@
                     document.form.style.display = 'none';
                     </script>
                     ";
+                    $end = hrtime(true);   
+                    echo ($end - $start) / 1000000000;   // Seconds
+                    
                     //echo "<strong id='strong'>",$_SESSION['nombre_A'],' ',$_SESSION['operation'],' ',$_SESSION['nombre_B'],"</strong>"," = ",$result;
                     $_SESSION['counter'] += 1;
                     $temp_A = random_int(1,10);

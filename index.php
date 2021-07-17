@@ -4,9 +4,11 @@
 
 <!DOCTYPE html>
 <html>
+
 <?php
     include 'head.php';
 ?>
+
     <body>
         <p id='message'>Entrez le mot de passe :</p>
     
