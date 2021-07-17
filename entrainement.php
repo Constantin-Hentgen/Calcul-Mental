@@ -88,7 +88,6 @@
                     header("Refresh:1");
                 }
             }
-            //gestion générique en cas de problème
-            ?>
+        ?>
     </body>
 </html>
