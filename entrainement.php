@@ -11,13 +11,16 @@
     <body>
         <?php
            echo "<strong id='strong'>",$_SESSION['nombre_A'],' ',$_SESSION['operation'],' ',$_SESSION['nombre_B'],"</strong>";
-           $start = hrtime(true);           
+           $start = hrtime(true); // stopwatch begins         
         ?>
+
+        <!-- form pour entrer le résultat de l'opération -->
         <form id='form' action="<?=$_SERVER['PHP_SELF']?>" method="post">
             <input type="variable" name="variable" autofocus autocomplete="off"/>
         </form>
 
         <?php
+            // détermination du résultat en fonction du type d'opération
             if ($_SESSION['operation'] === '+'){
                 $result = $_SESSION['nombre_A']+$_SESSION['nombre_B'];
             }
@@ -32,65 +35,59 @@
             }
 
             if (isset($_POST['variable'])){
-                if ($_SESSION['counter'] === 2 && (int)$_POST['variable']===$result) 
-                // prendre garde à ce que la condition de réussite soit remplie
+                // Féliciter le joueur pour avoir finit une série de calculs
+                if ($_SESSION['counter'] === 20 && (int)$_POST['variable']===$result)
                 {
                     echo "<img id='fireworks' src='fireworks.gif'/>";
                     echo "
                     <script>
-                    document.getElementById('strong').style.display = 'none';
-                    document.getElementById('form').style.display = 'none';
-                    document.getElementById('strong').style.color = '#282828';
+                        document.getElementById('strong').style.display = 'none';
+                        document.getElementById('form').style.display = 'none';
+                        document.getElementById('strong').style.color = '#282828';
                     </script>";
-                    echo "<strong id='congrats'>Félicitations","</strong>";
+
+                    echo "<strong id='congrats'>Félicitations</strong>";
                     $_SESSION['counter'] = 0;
                     header('Refresh:8;url=menu.php');
                 }
+
+                // cas de réussite standard
                 elseif ((int)$_POST['variable']===$result)
                 {
                     echo "
                     <strong id='answer'>",$_SESSION['nombre_A'],' ',$_SESSION['operation'],' ',$_SESSION['nombre_B'],' = ',$result,"</strong>
-                    <img id='valide' src='valide.png'/>
+                    
                     <script>
-                    document.getElementById('form').style.display = 'none';
-                    document.getElementById('valide').style.display = 'flex';
-                    document.getElementById('strong').style.display = 'none';
-                    document.getElementById('answer').style.color = '#282828';
-                    document.body.style.background = 'yellowgreen';
-                    document.form.style.display = 'none';
+                        document.getElementById('form').style.display = 'none';
+                        document.getElementById('strong').style.display = 'none';
+                        document.getElementById('answer').style.color = '#282828';
+                        document.body.style.background = 'green';
                     </script>
                     ";
-                    $end = hrtime(true);   
+                    $end = hrtime(true); // time's out
                     echo ($end - $start) / 1000000000;   // Seconds
                     
-                    //echo "<strong id='strong'>",$_SESSION['nombre_A'],' ',$_SESSION['operation'],' ',$_SESSION['nombre_B'],"</strong>"," = ",$result;
                     $_SESSION['counter'] += 1;
-                    $temp_A = random_int(1,10);
-                    $temp_B = random_int(1,10);
-                    while ($temp_A < $temp_B){
-                        $temp_A = random_int(1,10);
-                        $temp_B = random_int(1,10);
-                    }
-                    $_SESSION['nombre_A'] = $temp_A;
-                    $_SESSION['nombre_B'] = $temp_B;
-                    $dico = ['+','-','×'];
-                    $dico_picker = random_int(0,2);
-                    $_SESSION['operation'] = $dico[$dico_picker];
+
+                    include 'variable.php';   // génération du nombre aléatoire
                     header("Refresh:1");
                 }
                 
+                // gestion des erreurs : ni réussite ni fin de session
                 else
                 {
                     echo "
-                    <strong id='answer'>",$_SESSION['nombre_A'],' ',$_SESSION['operation'],' ',$_SESSION['nombre_B'],' différent ',$_SESSION['input'],"</strong>
+                    <strong id='answer'>",$_SESSION['nombre_A'],' ',$_SESSION['operation'],' ',$_SESSION['nombre_B'],' ≠ ',$_POST['variable'],"</strong>
                     <script>
                     document.getElementById('form').style.display = 'none';
-                    document.getElementById('valide').style.display = 'flex';
                     document.getElementById('strong').style.display = 'none';
                     document.getElementById('answer').style.color = '#282828';
-                    document.body.style.background = 'yellowgreen';
-                    document.form.style.display = 'none';
+                    document.body.style.background = 'orange';
                     </script>";
+
+                    $end = hrtime(true); // time's out
+                    echo ($end - $start) / 1000000000;   // Seconds
+
                     header("Refresh:1");
                 }
             }
