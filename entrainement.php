@@ -1,6 +1,5 @@
 <?php
     session_start();
-    $_SESSION['tentatives'] = 0;
 ?>
 <!DOCTYPE html>
 <html>
@@ -16,6 +15,7 @@
         </form>
 
         <?php
+            $_SESSION['input'] = $_POST['variable'];
             if ($_SESSION['operation'] === '+'){
                 $result = $_SESSION['nombre_A']+$_SESSION['nombre_B'];
             }
@@ -75,16 +75,17 @@
                 
                 else
                 {
-                    echo "<strong id='cross'> ❌</strong>
+                    echo "
+                    <strong id='answer'>",$_SESSION['nombre_A'],' ',$_SESSION['operation'],' ',$_SESSION['nombre_B'],' différent ',$_SESSION['input'],"</strong>
                     <script>
                     document.getElementById('form').style.display = 'none';
-                    document.getElementById('cross').style.display = 'flex';
+                    document.getElementById('valide').style.display = 'flex';
                     document.getElementById('strong').style.display = 'none';
-                    document.body.style.background = 'transparent';
+                    document.getElementById('answer').style.color = '#282828';
+                    document.body.style.background = 'yellowgreen';
                     document.form.style.display = 'none';
-                    </script>
-                    ";
-                    header("Refresh:1;url=entrainement.php");
+                    </script>";
+                    header("Refresh:1");
                 }
             }
             //gestion générique en cas de problème
