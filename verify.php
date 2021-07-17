@@ -16,7 +16,7 @@
             document.body.style.color = 'black';
             document.getElementById('message').style.color = '#282828';
         </script>";
-        header("Refresh:3;url=menu.php");//math.php
+        header("Refresh:3;url=menu.php");
     }
     elseif (isset($_POST["variable"]) == false)
     {}
