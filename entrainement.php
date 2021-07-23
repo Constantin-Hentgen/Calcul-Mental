@@ -10,7 +10,9 @@
 
     <body>
         <?php
-            echo $_SESSION['counter'];
+            if ($_SESSION['counter']!=0 && $_SESSION['counter'] != 10){
+                echo $_SESSION['counter']," calculs réussis";
+            }
             echo "<strong id='strong'>",$_SESSION['nombre_A'],' ',$_SESSION['operation'],' ',$_SESSION['nombre_B'],"</strong>";
             //$start = hrtime(true); // stopwatch begins
         ?>
@@ -68,14 +70,14 @@
                     $end = hrtime(true); // time's out
                     if ($_SESSION['counter'] == 0)
                     {
-                        echo round(($end - $_SESSION['start']) / 1000000000)-3;
+                        echo round(($end - $_SESSION['start']) / 1000000000)-3, ' secondes';
                         // réduire l'écart de temps fatalement généré au premier lancement
                         // c'est dû au soucis de déclenchement du chronomètre
                     }
 
                     else
                     {
-                        echo round(($end - $_SESSION['start']) / 1000000000)-1;   // Seconds
+                        echo round(($end - $_SESSION['start']) / 1000000000)-1, ' secondes';   // Seconds
                     }
                     
                     $_SESSION['counter'] += 1;

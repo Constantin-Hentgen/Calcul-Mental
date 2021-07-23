@@ -63,8 +63,24 @@ html body small {
 #Entrainement {
   background-color: red;
   border-radius: 20px;
+  font-size: 60px;
+  text-align: center;
   width: 120px;
   height: 120px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 100px;
+}
+
+#duree {
+  background-color: grey;
+  height: 30px;
+  width: 30%;
+  margin-top: 15px;
+  font-size: 25px;
+  color: black;
 }
 
 #settings {
@@ -73,7 +89,16 @@ html body small {
   font-size: 80px;
   width: 120px;
   height: 120px;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
+}
+
+#about {
+  background-color: green;
+  border-radius: 20px;
+  font-size: 80px;
+  width: 120px;
+  height: 120px;
+  margin-top: 40px;
 }
 
 #password {
@@ -159,6 +184,14 @@ hr {
   border-radius: 0 0 20px 0;
   width: 100px;
   height: 100px;
+}
+
+.rocket {
+  animation-delay: 1s;
+}
+
+.trophy {
+  animation-delay: 2s;
 }
 
 #menu {
@@ -330,12 +363,21 @@ hr {
     transform: scale(1);
   }
 }
-@keyframes zoom_in {
+@keyframes bouncy {
   0% {
     transform: scale(1);
   }
-  50% {
-    transform: scale(1.1);
+  10% {
+    transform: scale(0.95);
+  }
+  20% {
+    transform: scale(1.05);
+  }
+  25% {
+    transform: scale(0.9);
+  }
+  30% {
+    transform: scale(1);
   }
   100% {
     transform: scale(1);
