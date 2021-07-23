@@ -11,7 +11,7 @@
     <body>
         <?php
            echo "<strong id='strong'>",$_SESSION['nombre_A'],' ',$_SESSION['operation'],' ',$_SESSION['nombre_B'],"</strong>";
-           $start = hrtime(true); // stopwatch begins         
+           //$start = hrtime(true); // stopwatch begins         
         ?>
 
         <!-- form pour entrer le résultat de l'opération -->
@@ -65,7 +65,7 @@
                     </script>
                     ";
                     $end = hrtime(true); // time's out
-                    echo ($end - $start) / 1000000000;   // Seconds
+                    echo round(($end - $_SESSION['start']) / 1000000000,1);   // Seconds
                     
                     $_SESSION['counter'] += 1;
 
@@ -86,7 +86,7 @@
                     </script>";
 
                     $end = hrtime(true); // time's out
-                    echo ($end - $start) / 1000000000;   // Seconds
+                    echo round(($end - $_SESSION['start']) / 1000000000,1);   // Seconds
 
                     header("Refresh:1");
                 }

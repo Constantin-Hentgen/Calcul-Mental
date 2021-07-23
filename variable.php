@@ -13,4 +13,5 @@
     $_SESSION['operation'] = $dico[$dico_picker];
     $_SESSION['counter'] = 0;
     $_SESSION['tentatives'] = 0;
+    $_SESSION['start'] = hrtime(true);
 ?>
