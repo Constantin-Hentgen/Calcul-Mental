@@ -10,15 +10,16 @@
 
     <body>
         <?php
-           echo "<strong id='strong'>",$_SESSION['nombre_A'],' ',$_SESSION['operation'],' ',$_SESSION['nombre_B'],"</strong>";
-           //$start = hrtime(true); // stopwatch begins         
+            echo $_SESSION['counter'];
+            echo "<strong id='strong'>",$_SESSION['nombre_A'],' ',$_SESSION['operation'],' ',$_SESSION['nombre_B'],"</strong>";
+            //$start = hrtime(true); // stopwatch begins
         ?>
 
         <!-- form pour entrer le résultat de l'opération -->
         <form id='form' action="<?=$_SERVER['PHP_SELF']?>" method="post">
             <input type="variable" name="variable" autofocus autocomplete="off"/>
         </form>
-
+        
         <?php
             // détermination du résultat en fonction du type d'opération
             if ($_SESSION['operation'] === '+'){
@@ -36,7 +37,7 @@
 
             if (isset($_POST['variable'])){
                 // Féliciter le joueur pour avoir finit une série de calculs
-                if ($_SESSION['counter'] === 20 && (int)$_POST['variable']===$result)
+                if ($_SESSION['counter'] === 10 && (int)$_POST['variable']===$result)
                 {
                     echo "<img id='fireworks' src='fireworks.gif'/>";
                     echo "
@@ -65,10 +66,19 @@
                     </script>
                     ";
                     $end = hrtime(true); // time's out
-                    echo round(($end - $_SESSION['start']) / 1000000000,1);   // Seconds
+                    if ($_SESSION['counter'] == 0)
+                    {
+                        echo round(($end - $_SESSION['start']) / 1000000000)-3;
+                        // réduire l'écart de temps fatalement généré au premier lancement
+                        // c'est dû au soucis de déclenchement du chronomètre
+                    }
+
+                    else
+                    {
+                        echo round(($end - $_SESSION['start']) / 1000000000)-1;   // Seconds
+                    }
                     
                     $_SESSION['counter'] += 1;
-
                     include 'variable.php';   // génération du nombre aléatoire
                     header("Refresh:1");
                 }
@@ -84,9 +94,6 @@
                     document.getElementById('answer').style.color = '#282828';
                     document.body.style.background = 'orange';
                     </script>";
-
-                    $end = hrtime(true); // time's out
-                    echo round(($end - $_SESSION['start']) / 1000000000,1);   // Seconds
 
                     header("Refresh:1");
                 }

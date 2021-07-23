@@ -6,7 +6,7 @@
             document.getElementById('form').style.display = 'none';
             document.getElementById('message').innerHTML = 'Bienvenue';
             document.getElementById('message').style.fontSize = '100px';
-            document.getElementById('message').style.color = 'yellowgreen';
+            document.getElementById('message').style.color = 'grey';
             document.body.style.width = '100%';
             document.body.style.height = '100%';
             document.body.style.padding = '0';
@@ -17,7 +17,8 @@
             document.getElementById('message').style.color = '#282828';
         </script>";
         include('variable.php');
-        header("Refresh:3;url=entrainement.php"); // menu.php
+        $_SESSION['counter'] = 0;
+        header("Refresh:3;url=menu.php"); // menu.php
     }
     elseif (isset($_POST["variable"]) == false)
     {}

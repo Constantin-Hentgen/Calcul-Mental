@@ -17,7 +17,7 @@ html {
     display: grid;
     place-items: center;
     color: whitesmoke;
-    background-color: $secondary-color;
+    background-color: #2b2a33;
     width: 40%;
     padding: 30px;
     border: transparent 0px black;
@@ -36,15 +36,16 @@ html {
       color: grey;
     }
     input{
-      background-color: $secondary-color;
-      color: whitesmoke;
+      background-color: #2b2a33;
       border: transparent 0px solid;
+      color: black;
       border-radius: 5px;
       padding: 10px;
       font-size: 50px;
       font-weight: bold;
       text-align: center;
     }
+
 
     #valide{
       display: none;
@@ -56,7 +57,6 @@ html {
     }
     strong{
       font-size: 50px;
-      color: grey;
       margin-bottom: 8px;
       margin-top: 8px;
     }
@@ -65,11 +65,21 @@ html {
     }
   }
 }
+
 #Entrainement{
   background-color: red;
   border-radius: 20px;
   width: 120px;
   height: 120px;
+}
+
+#settings{
+  background-color: green;
+  border-radius: 20px;
+  font-size: 80px;
+  width: 120px;
+  height: 120px;
+  margin-bottom: 50px;
 }
 
 #password{
@@ -93,13 +103,30 @@ html {
 #down{
   display: flex;
   justify-items: center;
+  width: 500px;
+  input{
+    background-color: blue;
+    margin: auto;
+  }
 }
 
-#Marathon{
-  background-color: blue;
-  border-radius: 20px 0 0 0;
-  width: 100px;
-  height: 100px;
+hr{
+  color: whitesmoke;
+  width: 50%;
+}
+
+.menU{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 600px;
+  margin-bottom: 50px;
+}
+
+.sousclasse{
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
 }
 
 #cross{
@@ -133,15 +160,6 @@ html {
   background-color: transparent;
 }
 
-#qcm{
-  background-color: yellow;
-  color: black;
-  font-size: 30px;
-  border-radius: 0;
-  width: 100px;
-  height: 100px;
-}
-
 #Top_Chrono{
   background-color: green;
   border-radius: 0 0 20px 0;
@@ -161,6 +179,140 @@ html {
   #menu input{
     font-size: 20px;
   }
+}
+
+/* The container */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+//auieuae
+
+/* The container */
+.container1 {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.container1 input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.container1:hover input ~ .checkmark1 {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.container1 input:checked ~ .checkmark1 {
+  background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark1:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container1 input:checked ~ .checkmark1:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container1 .checkmark1:after {
+ 	top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
 }
 
 #message{

@@ -11,7 +11,6 @@
     $dico = ['+','-','×'];
     $dico_picker = random_int(0,2);
     $_SESSION['operation'] = $dico[$dico_picker];
-    $_SESSION['counter'] = 0;
     $_SESSION['tentatives'] = 0;
     $_SESSION['start'] = hrtime(true);
 ?>
