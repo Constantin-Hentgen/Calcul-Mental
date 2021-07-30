@@ -18,6 +18,9 @@
     $_SESSION['soustraction'] = 'non';
     $_SESSION['multiplication'] = 'non';
 
+    $_SESSION['duration'] = 60;
+    $_SESSION['endurance'] = 10;
+
     // $possiblities = [];
 
     // if ($_SESSION['facile']=='oui')

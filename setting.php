@@ -49,17 +49,18 @@
 
         <div class="alin">
           <div class='reverse'>
-            <label for="quantity">Temps contre la montre :</label>
-            <input id='duree' type="number" id="quantity" name="duration" min="1">
+            <label for="quantity">Temps contre la montre en secondes | </label>
+            <input id='duree' type="number" id="quantity" name="duration" min="1" value=<?php if (isset($_SESSION['duration'])){echo $_SESSION['duration'];}else{echo '1';}?>>
           </div>
         
           <div class='reverse'>
-            <label for="quantity">Objectif de calculs en endurance :</label>
-            <input id='duree' type="number" id="quantity" name="endurance" min="1">
+            <label for="quantity">Objectif de calculs en endurance | </label>
+            <input id='duree' type="number" id="quantity" name="endurance" min="1" value=<?php if (isset($_SESSION['endurance'])){echo $_SESSION['endurance'];}else{echo '1';}?>>
           </div>
         </div>
         
         <input id='validation' type="submit" name="formSubmit" value="Valider ✅" />
+
         <?php
           if(isset($_POST['formSubmit']))
           {
@@ -68,87 +69,85 @@
         ?>
       </form>
     </body>
+
       <?php
+      if (isset($post['duration']))
+      {
+        $_SESSION['duration'] = $_POST['duration'];
+      }
+
+      if (isset($_POST['endurance'])){
+        $_SESSION['endurance'] = $_POST['endurance'];
+      }
+
         if (isset($_POST['facile']) && $_POST['facile'] == 'Oui') 
         {
           $_SESSION['facile'] = 'oui';
-          // echo "<script>document.getElementById('addition').checked = true;</script>";
-          // echo "Mode facile activé";
         }
+
         else
         {
           $_SESSION['facile'] = 'non';
-          // echo "<script>document.getElementById('addition').checked = false;</script>";
-            // echo "Mode facile désactivé";
         }
 
         if (isset($_POST['intermediaire']) && $_POST['intermediaire'] == 'Oui') 
         {
           $_SESSION['intermediaire'] = 'oui';
-          // echo "<br>Mode intermediaire activé";
         }
+
         else
         {
           $_SESSION['intermediaire'] = 'non';
-          // echo "<br>Mode intermediaire désactivé";
         }
 
         if (isset($_POST['difficile']) && $_POST['difficile'] == 'Oui') 
         {
           $_SESSION['difficile'] = 'oui';
-          // echo "<br>Mode difficile activé";
         }
+
         else
         {
           $_SESSION['difficile'] = 'non';
-          // echo "<br>Mode difficile désactivé";
         }
 
         if (isset($_POST['cauchemar']) && $_POST['cauchemar'] == 'Oui') 
         {
           $_SESSION['cauchemar'] = 'oui';
-          // echo "<br>Mode cauchemar activé";
         }
+
         else
         {
           $_SESSION['cauchemar'] = 'non';
-          // echo "<br>Mode cauchemar désactivé";
         }
 
         if (isset($_POST['addition']) && $_POST['addition'] == 'Oui') 
         {
           $_SESSION['addition'] = 'oui';
-          // echo "<br>Mode cauchemar activé";
         }
 
         else
         {
           $_SESSION['addition'] = 'non';
-          // echo "<br>Mode cauchemar désactivé";
         }
 
         if (isset($_POST['soustraction']) && $_POST['soustraction'] == 'Oui') 
         {
           $_SESSION['soustraction'] = 'oui';
-          // echo "<br>Mode cauchemar activé";
         }
 
         else
         {
           $_SESSION['soustraction'] = 'non';
-          // echo "<br>Mode cauchemar désactivé";
         }
 
         if (isset($_POST['multiplication']) && $_POST['multiplication'] == 'Oui') 
         {
           $_SESSION['multiplication'] = 'oui';
-          // echo "<br>Mode cauchemar activé";
         }
 
         else
         {
           $_SESSION['multiplication'] = 'non';
-          // echo "<br>Mode cauchemar désactivé";
         }
 
         // echo $_SESSION['facile'];
