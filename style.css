@@ -60,6 +60,12 @@ html body small {
   margin-top: 10px;
 }
 
+#categorie {
+  display: flex;
+  flex-direction: column;
+  justify-items: left;
+}
+
 #Entrainement {
   background-color: red;
   border-radius: 20px;

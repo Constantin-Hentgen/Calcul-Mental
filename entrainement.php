@@ -12,8 +12,10 @@
         <?php
             if ($_SESSION['counter']!=0 && $_SESSION['counter'] != 10){
                 echo $_SESSION['counter']," calculs réussis";
+                echo '<br>',$_SESSION['ultimate_counter']," calculs effectués";
             }
             echo "<strong id='strong'>",$_SESSION['nombre_A'],' ',$_SESSION['operation'],' ',$_SESSION['nombre_B'],"</strong>";
+            $delete_gap = hrtime(true);
             //$start = hrtime(true); // stopwatch begins
         ?>
 
@@ -51,6 +53,7 @@
 
                     echo "<strong id='congrats'>Félicitations</strong>";
                     $_SESSION['counter'] = 0;
+                    $_SESSION['ultimate_counter'] = 0;
                     header('Refresh:8;url=menu.php');
                 }
 
@@ -68,7 +71,7 @@
                     </script>
                     ";
                     $end = hrtime(true); // time's out
-                    if ($_SESSION['counter'] == 0)
+                    if ($_SESSION['ultimate_counter'] == 0)
                     {
                         echo round(($end - $_SESSION['start']) / 1000000000)-3, ' secondes';
                         // réduire l'écart de temps fatalement généré au premier lancement
@@ -81,6 +84,7 @@
                     }
                     
                     $_SESSION['counter'] += 1;
+                    $_SESSION['ultimate_counter'] += 1;
                     include 'variable.php';   // génération du nombre aléatoire
                     header("Refresh:1");
                 }
@@ -88,6 +92,7 @@
                 // gestion des erreurs : ni réussite ni fin de session
                 else
                 {
+                    $_SESSION['ultimate_counter'] += 1;
                     echo "
                     <strong id='answer'>",$_SESSION['nombre_A'],' ',$_SESSION['operation'],' ',$_SESSION['nombre_B'],' ≠ ',$_POST['variable'],"</strong>
                     <script>

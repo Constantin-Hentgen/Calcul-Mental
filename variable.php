@@ -13,4 +13,9 @@
     $_SESSION['operation'] = $dico[$dico_picker];
     $_SESSION['tentatives'] = 0;
     $_SESSION['start'] = hrtime(true);
+    $_SESSION['delete_gap'] = hrtime(true);
+    $_SESSION['facile'] = 'oui';
+    $_SESSION['intermediaire'] = 'non';
+    $_SESSION['difficile'] = 'non';
+    $_SESSION['cauchemar'] = 'non';
 ?>
