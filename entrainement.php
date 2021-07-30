@@ -10,10 +10,10 @@
 
     <body>
         <?php
-            // if ($_SESSION['ultimate_counter']==0){
-            //     $_SESSION['start'] = hrtime(true);
-            //     $_SESSION['delete_gap'] = hrtime(true);
-            // }
+            if ($_SESSION['ultimate_counter']==0){
+                $_SESSION['start'] = hrtime(true)+3;
+            }
+
             if ($_SESSION['counter']!=0 && $_SESSION['counter'] != 10){
                 echo $_SESSION['counter']," calculs réussis";
                 echo '<br>',$_SESSION['ultimate_counter']," calculs effectués";

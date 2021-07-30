@@ -1,10 +1,12 @@
-//document.getElementById("javascript")
-
-//function addition_verification()
-//{
-//    let randomy = 6;
-//    document.getElementById('ruselt').innerHTML = 'le ruséltat est '+ randomy;
-//    //alert(numberA+","+numberB+', the suggestion is : '+suggestion+' but the answer is : '+ result);
-//    //document.getElementById("input_val").value = numberB + numberA;
-//    //alert("ça fonctionne pas trop mal : " + variable_de_test);
-//}
+// document.getElementById('form').style.display = 'none';
+// document.getElementById('message').innerHTML = 'La première bonne réponse donne le départ';
+// document.getElementById('message').style.fontSize = '100px';
+// document.getElementById('message').style.color = 'grey';
+// document.body.style.width = '100%';
+// document.body.style.height = '100%';
+// document.body.style.padding = '0';
+// document.body.style.margin = '0';
+// document.style.height = '100%';
+// document.style.width = '100%';
+// document.body.style.color = 'black';
+// document.getElementById('message').style.color = '#282828';
