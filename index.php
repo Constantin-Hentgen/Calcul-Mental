@@ -1,6 +1,5 @@
 <?php
     session_start();
-    $_SESSION['ultimate_counter'] = 0;
 ?>
 
 <!DOCTYPE html>

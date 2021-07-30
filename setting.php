@@ -35,7 +35,6 @@
           <div class="selection"><input class='checkbox' type="checkbox" name="difficile" value="Oui" <?php echo ($_SESSION['difficile']=='oui' ? 'checked' : '');?>>Difficile</div>
           <div class="selection"><input class='checkbox' type="checkbox" name="cauchemar" value="Oui" <?php echo ($_SESSION['cauchemar']=='oui' ? 'checked' : '');?>>Cauchemar</div>
         </div>
-      <hr/>
 
       <h3>Type d'opération</h3>
       
@@ -44,17 +43,17 @@
         <div class="selection"><input class='checkbox' type="checkbox" name="soustraction" value="Oui" <?php echo ($_SESSION['soustraction']=='oui' ? 'checked' : '');?>>Soustraction</div>
         <div class="selection"><input class='checkbox' type="checkbox" name="multiplication" value="Oui" <?php echo ($_SESSION['multiplication']=='oui' ? 'checked' : '');?>>Multiplication</div>
       </div>
-
-        <hr/>
+  
+      <hr id='auie'>
 
         <div class="alin">
           <div class='reverse'>
-            <label for="quantity">Temps contre la montre en secondes | </label>
+            <label for="quantity">Temps contre la montre en secondes</label>
             <input id='duree' type="number" id="quantity" name="duration" min="1" value=<?php if (isset($_SESSION['duration'])){echo $_SESSION['duration'];}else{echo '1';}?>>
           </div>
         
           <div class='reverse'>
-            <label for="quantity">Objectif de calculs en endurance | </label>
+            <label for="quantity">Objectif de calculs en endurance</label>
             <input id='duree' type="number" id="quantity" name="endurance" min="1" value=<?php if (isset($_SESSION['endurance'])){echo $_SESSION['endurance'];}else{echo '1';}?>>
           </div>
         </div>
@@ -71,14 +70,23 @@
     </body>
 
       <?php
-      if (isset($post['duration']))
-      {
-        $_SESSION['duration'] = $_POST['duration'];
-      }
+        if (isset($_POST['duration']))
+        {
+          $_SESSION['duration'] = $_POST['duration'];
+        }
 
-      if (isset($_POST['endurance'])){
-        $_SESSION['endurance'] = $_POST['endurance'];
-      }
+        else{
+          $_SESSION['duration'] = 60;
+        }
+
+        if (isset($_POST['endurance']))
+        {
+          $_SESSION['endurance'] = $_POST['endurance'];
+        }
+
+        else{
+          $_SESSION['endurance'] = 10;
+        }
 
         if (isset($_POST['facile']) && $_POST['facile'] == 'Oui') 
         {
@@ -149,19 +157,5 @@
         {
           $_SESSION['multiplication'] = 'non';
         }
-
-        // echo $_SESSION['facile'];
-        // echo '<br>';
-        // echo $_SESSION['intermediaire'];
-        // echo '<br>';
-        // echo $_SESSION['difficile'];
-        // echo '<br>';
-        // echo $_SESSION['cauchemar'];
-        // echo '<br>';
-        // echo $_SESSION['addition'];
-        // echo '<br>';
-        // echo $_SESSION['soustraction'];
-        // echo '<br>';
-        // echo $_SESSION['multiplication'];
       ?>
 </html>
