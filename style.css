@@ -44,6 +44,9 @@ html body input {
   font-weight: bold;
   text-align: center;
 }
+html body .alin {
+  width: fit-content;
+}
 html body #valide {
   display: none;
   width: 50px;
@@ -66,6 +69,23 @@ html body small {
   justify-items: left;
 }
 
+.checkbox {
+  width: 25px;
+  height: 25px;
+}
+
+#validation {
+  margin-top: 40px;
+}
+
+.reverse {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  place-items: center;
+  margin-top: 10px;
+}
+
 #Entrainement {
   background-color: red;
   border-radius: 20px;
@@ -84,7 +104,7 @@ a {
   background-color: grey;
   height: 30px;
   width: 30%;
-  margin-top: 15px;
+  margin-left: 5px;
   font-size: 25px;
   color: black;
 }
