@@ -4,6 +4,8 @@
 
 <?php
     include 'head.php';
+    $_SESSION['borneA'] = 1;
+    $_SESSION['borneB'] = 9;
 ?>
 
     <body id="invisible">

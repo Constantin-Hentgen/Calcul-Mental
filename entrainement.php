@@ -17,7 +17,10 @@
             if ($_SESSION['counter']!=0 && $_SESSION['counter'] != 10){
                 echo $_SESSION['counter']," calculs réussis";
                 echo '<br>',$_SESSION['ultimate_counter']," calculs effectués";
+                echo '<br> borne A : ',$_SESSION['borneA']," | borne B : ",$_SESSION['borneB'];
+                // echo '<br>';print_r($_SESSION['dico']);
             }
+
             echo "<strong id='strong'>",$_SESSION['nombre_A'],' ',$_SESSION['operation'],' ',$_SESSION['nombre_B'],"</strong>";
             $delete_gap = hrtime(true);
             //$start = hrtime(true); // stopwatch begins
@@ -45,7 +48,7 @@
 
             if (isset($_POST['variable'])){
                 // Féliciter le joueur pour avoir finit une série de calculs
-                if ($_SESSION['counter'] === 10 && (int)$_POST['variable']===$result)
+                if ($_SESSION['counter'] === 2 && (int)$_POST['variable']===$result)
                 {
                     echo "<img id='fireworks' src='fireworks.gif'/>";
                     echo "
@@ -90,7 +93,7 @@
                     $_SESSION['counter'] += 1;
                     $_SESSION['ultimate_counter'] += 1;
                     include 'variable.php';   // génération du nombre aléatoire
-                    header("Refresh:1");
+                    header("Refresh:3");
                 }
                 
                 // gestion des erreurs : ni réussite ni fin de session
@@ -106,7 +109,7 @@
                     document.body.style.background = 'orange';
                     </script>";
 
-                    header("Refresh:1");
+                    header("Refresh:3");
                 }
             }
         ?>
