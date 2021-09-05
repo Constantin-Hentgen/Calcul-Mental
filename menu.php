@@ -16,7 +16,6 @@
         <div id="down">
             <input type="button" onClick='window.location.href="entrainement.php";' id="Entrainement" value='🏃'>
             <input type="button" onClick='window.location.href="entrainement.php";' id="Entrainement" class='rocket'value='🚀'>
-            <input type="button" onClick='window.location.href="entrainement.php";' id="Entrainement" class='trophy'value='🏆'>
         </div>
         <div id="bellow">
             <input type="button" onClick='window.location.replace("setting.php");' id="about"value='💡'>

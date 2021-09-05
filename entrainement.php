@@ -10,15 +10,15 @@
 
     <body>
         <?php
+            $_SESSION['startOnLoad'] = hrtime(true);
             if ($_SESSION['ultimate_counter']==0){
                 $_SESSION['start'] = hrtime(true)+3;
             }
 
             if ($_SESSION['counter']!=0 && $_SESSION['counter'] != 10){
-                echo $_SESSION['counter']," calculs réussis";
-                echo '<br>',$_SESSION['ultimate_counter']," calculs effectués";
+                echo $_SESSION['ultimate_counter']," calculs effectués";
+                echo '<br>',$_SESSION['counter']," calculs réussis";
                 echo '<br> borne A : ',$_SESSION['borneA']," | borne B : ",$_SESSION['borneB'];
-                // echo '<br>';print_r($_SESSION['dico']);
             }
 
             echo "<strong id='strong'>",$_SESSION['nombre_A'],' ',$_SESSION['operation'],' ',$_SESSION['nombre_B'],"</strong>";
@@ -80,8 +80,7 @@
                     $end = hrtime(true); // time's out
                     if ($_SESSION['ultimate_counter'] == 0)
                     {
-                        echo round(($end - $_SESSION['start']) / 1000000000)-3, ' secondes';
-                        // réduire l'écart de temps fatalement généré au premier lancement
+                        echo round(($end - $_SESSION['startOnLoad']) / 1000000000), ' secondes pour le premier calcul';
                         // c'est dû au soucis de déclenchement du chronomètre
                     }
 
@@ -95,7 +94,7 @@
                     include 'variable.php';   // génération du nombre aléatoire
                     header("Refresh:3");
                 }
-                
+
                 // gestion des erreurs : ni réussite ni fin de session
                 else
                 {
