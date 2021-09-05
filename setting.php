@@ -4,24 +4,11 @@
 
 <!DOCTYPE html>
 <html>
-    <?php
-        include 'head.php';
-
-        // echo $_SESSION['facile'];
-        // echo '<br>';
-        // echo $_SESSION['intermediaire'];
-        // echo '<br>';
-        // echo $_SESSION['difficile'];
-        // echo '<br>';
-        // echo $_SESSION['cauchemar'];
-        // echo '<br>';
-        // echo $_SESSION['addition'];
-        // echo '<br>';
-        // echo $_SESSION['soustraction'];
-        // echo '<br>';
-        // echo $_SESSION['multiplication'];
-    ?>
-
+  <head>
+      <meta charset="utf-8" />
+      <title>Calcul Mental</title>
+      <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
 
     <body>
       <h1 id='specialtitle'>Préférences</h1>
